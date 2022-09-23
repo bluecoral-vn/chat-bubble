@@ -1,0 +1,81 @@
+.bubble-items {
+	background: transparent;
+	border: 1px dashed;
+	border-color: #98a1a5;
+	border-radius: 10px;
+	margin: 0 !important;
+	min-height: 150px;
+	padding: 10px !important;
+}
+.bubble-items .bubble-item {
+	min-height: 50px;
+}
+.bubble-items .bubble-item + .bubble-item {
+	margin-top: 15px;
+}
+.bubble-items .bubble-item.bubble-item-hightlight {
+	background: #fffa90;
+}
+.bubble-items .card {
+	margin-top: 0;
+	padding: 0;
+	position: relative;
+}
+.bubble-items .card .card-delete {
+    color: #ff982d;
+	position: absolute;
+    right: 10px;
+	top: 10px;
+}
+.bubble-items .card .card-delete:hover {
+    text-decoration: none;
+}
+.bubble-items .card-header {
+	cursor: pointer;
+	position: relative;
+}
+.bubble-items .card-header h5 {
+	margin: 0;
+	font-size: 16px;
+}
+.bubble-item .card-header i {
+	line-height: 1.2;
+	margin: -3px 5px 0 0;
+	opacity: 0;
+}
+.bubble-item.active .card-header i {
+	opacity: 1;
+}
+.bubble-items .card-body {
+    opacity: 1;
+    -moz-transition: opacity 2s, visibility 2s;
+    -webkit-transition: opacity 2s, visibility 2s;
+    -o-transition: opacity 2s, visibility 2s;
+    transition: opacity 2s, visibility 2s;
+    visibility: visible;
+}
+.bubble-items .card-body.hidden {
+    opacity: 0;
+    -moz-transition: opacity 1s, visibility 2s;
+    -webkit-transition: opacity 1s, visibility 2s;
+    -o-transition: opacity 1s, visibility 2s;
+    transition: opacity 2s, visibility 2s;
+    visibility: hidden;
+}
+.bubble-items .form-group {
+	padding: 5px 0;
+}
+.bubble-items .col-content {
+	padding-bottom: 5px;
+}
+.bubble-items p,
+.bubble-items p label {
+	margin-bottom: 0;
+}
+.bubble-item.active .card .card-header {
+	background: #5cb85c;
+	color: #ffffff;
+}
+.bubble-item.active .card .card-header > * {
+	font-weight: bold;
+}
