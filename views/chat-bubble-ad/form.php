@@ -22,7 +22,7 @@ if (!defined('ABSPATH')) exit; ?>
 					<div class="container">
 					<?php foreach ($group['fields'] as $i => $field) { 
 						if (isset($field['default_value']) && !isset($field['value'])) $field['value'] = $field['default_value']; ?>
-					<!-- <?php echo $field['name']; ?> field -->
+					<!-- <?php echo !empty( $field['name'] ) ? $field['name'] : ''; ?> field -->
 					
 						<?php if ($field['type'] == 'hidden') { ?>
 							<input name="<?php echo $key; ?>[<?php echo $field['name']; ?>]" type="<?php echo $field['type']; ?>" value="<?php echo esc_attr(stripslashes(@$field['value'])); ?>" />
@@ -31,35 +31,35 @@ if (!defined('ABSPATH')) exit; ?>
 								<div class="row" style="<?php echo (!empty($field['row_style'])) ? esc_attr($field['row_style']) : ''; ?>">
 								<?php switch ($field['type']) {
 									case 'checkbox': ?>
-									<div class="<?php echo (@$field['checkbox_layout'] == 'full') ? '' : 'offset-md-3 col-md-9'; ?> col-content">
-										<p>
-											<label>
-												<input name="<?php echo $key; ?>[<?php echo $field['name']; ?>]" type="hidden" value="0">
-												<input name="<?php echo $key; ?>[<?php echo $field['name']; ?>]" type="checkbox" value="1" class="form-control bubble-item-<?php echo $field['name']; ?>" <?php checked((int) @$field['value'], 1); ?> />
+										<div class="<?php echo (isset($field['checkbox_layout']) && $field['checkbox_layout'] == 'full') ? '' : 'offset-md-3 col-md-9'; ?> col-content">
+											<p>
+												<label>
+													<input name="<?php echo $key; ?>[<?php echo !empty($field['name'] ) ? $field['name'] : ''; ?>]" type="hidden" value="0">
+													<input name="<?php echo $key; ?>[<?php echo !empty($field['name'] ) ? $field['name'] : ''; ?>]" type="checkbox" value="1" class="form-control bubble-item-<?php echo !empty($field['name'] ) ? $field['name'] : ''; ?>" <?php checked((int) !empty($field['value']) ? $field['value'] : '', 1); ?> />
+												
+												<?php echo $field['title']; ?>
+												</label>
+											</p>
 											
-											<?php echo $field['title']; ?>
-											</label>
-										</p>
-										
-									<?php if (!empty($field['description'])) { ?>
-										<p class="description"><?php echo stripslashes(@$field['value']); ?></p>
-									<?php } ?>
-									</div>
+										<?php if (!empty($field['description'])) { ?>
+											<p class="description"><?php echo stripslashes(@$field['description']); ?></p>
+										<?php } ?>
+										</div>
 									<?php break; ?>
 									
 									<?php case 'select': ?>
-									<div class="col-md-3 col-header"><?php echo $field['title']; ?></div>
-									<div class="col-md-9 col-content col-border-bottom">
-										<select name="<?php echo $key; ?>[<?php echo $field['name']; ?>]" class="form-control">
-										<?php foreach ($field['options'] as $k => $option) { ?>
-											<option value="<?php echo esc_attr($k); ?>" <?php selected(@$field['value'], $k); ?>><?php echo $option; ?></option>
-										<?php } ?>
-										</select>
+										<div class="col-md-3 col-header"><?php echo $field['title']; ?></div>
+										<div class="col-md-9 col-content col-border-bottom">
+											<select name="<?php echo $key; ?>[<?php echo $field['name']; ?>]" class="form-control">
+											<?php foreach ($field['options'] as $k => $option) { ?>
+												<option value="<?php echo esc_attr($k); ?>" <?php selected(@$field['value'], $k); ?>><?php echo $option; ?></option>
+											<?php } ?>
+											</select>
 										
-									<?php if (!empty($field['description'])) { ?>
-										<p class="description"><?php echo stripslashes(@$field['value']); ?></p>
-									<?php } ?>
-									</div>
+										<?php if (!empty($field['description'])) { ?>
+											<p class="description"><?php echo stripslashes(@$field['description']); ?></p>
+										<?php } ?>
+										</div>
 									<?php break; ?>
 									
 									<?php case 'email': ?>
@@ -70,7 +70,7 @@ if (!defined('ABSPATH')) exit; ?>
 										<input name="<?php echo $key; ?>[<?php echo $field['name']; ?>]" type="<?php echo $field['type']; ?>" placeholder="<?php echo $field['placeholder']; ?>" class="regular-text form-control" style="max-width: 25rem;" value="<?php echo esc_attr(stripslashes(@$field['value'])); ?>" />
 																		
 									<?php if (!empty($field['description'])) { ?>
-										<p class="description"><?php echo stripslashes(@$field['value']); ?></p>
+										<p class="description"><?php echo stripslashes(@$field['description']); ?></p>
 									<?php } ?>								
 									</div>
 									<?php break; ?>
@@ -81,7 +81,7 @@ if (!defined('ABSPATH')) exit; ?>
 										<textarea name="<?php echo $key; ?>[<?php echo $field['name']; ?>]" type="<?php echo $field['type']; ?>" placeholder="<?php echo $field['placeholder']; ?>" class="regular-text form-control" style="max-width: 25rem;"><?php echo stripslashes(@$field['value']); ?></textarea>
 																		
 									<?php if (!empty($field['description'])) { ?>
-										<p class="description"><?php echo stripslashes(@$field['value']); ?></p>
+										<p class="description"><?php echo stripslashes(@$field['description']); ?></p>
 									<?php } ?>								
 									</div>
 									<?php break; ?>
@@ -91,7 +91,7 @@ if (!defined('ABSPATH')) exit; ?>
 									<?php echo $field['content']; ?>
 										
 									<?php if (!empty($field['description'])) { ?>
-										<p class="description"><?php echo stripslashes(@$field['value']); ?></p>
+										<p class="description"><?php echo stripslashes(@$field['description']); ?></p>
 									<?php } ?>
 									</div>
 									<?php break; ?>
@@ -100,7 +100,7 @@ if (!defined('ABSPATH')) exit; ?>
 								</div>
 							</div>
 						<?php } ?>
-					<!-- <?php echo $field['name']; ?> field -->
+					<!-- <?php echo !empty( $field['name'] ) ? $field['name'] : ''; ?> field -->
 					<?php } ?>
 					</div>				
 				<?php } ?>

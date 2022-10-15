@@ -19,7 +19,7 @@ extract($cbb_options); ?>
 		<?php } ?>
 		
 			<li class="nav-item nav-item-support">
-				<a href="mailto:support@cyberbase.vn" data-toggle="tooltip" data-placement="top" title="<?php _e('Need Support ?', 'chat-bubble'); ?>">
+				<a href="mailto:support@bluecoral.vn" data-toggle="tooltip" data-placement="top" title="<?php _e('Need Support ?', 'chat-bubble'); ?>">
 					<i class="dashicons dashicons-sos"></i> 
 					<span class="label"><?php _e('Need Support ?', 'chat-bubble'); ?></span>
 				</a>

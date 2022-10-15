@@ -7,12 +7,16 @@
 * Author: Blue Coral
 * Author URI: http://bluecoral.vn
 * Contributors: bluecoral
-* Version: 2.2
+* Version: 2.3
 * Text Domain: chat-bubble
 *
 */
 
 if (!defined('ABSPATH')) exit; 
+
+if ( !defined( "CHAT_BUBBLE_PLUGIN_FILE" ) ) :
+	define( "CHAT_BUBBLE_PLUGIN_FILE", __FILE__ );
+endif;
 
 if (!class_exists('Chat_Bubble_Be')) {
 	class Chat_Bubble_Be {
@@ -102,12 +106,12 @@ if (!class_exists('Chat_Bubble_Be')) {
 				'greeting' => 'Welcome! 👋🏼👋🏼👋🏼 What can I help you with today?',
 				'links' => array(
 					array(
-						'u' => 'http://cyberbase.vn/',
+						'u' => 'http://bluecoral.vn/',
 						't' => 'Homepage',
 						'b' => 1,
 					),
 					array(
-						'u' => 'https://www.facebook.com/cyberbase.vn',
+						'u' => 'https://www.facebook.com/bluecoral.vn',
 						't' => 'Facebook',
 						'b' => 1,
 					),
@@ -133,7 +137,7 @@ if (!class_exists('Chat_Bubble_Be')) {
 					'pos' => 0,
 					'place' => 'inner',
 					'title' => 'Messenger',
-					'facebook' => 'cyberbase.vn',
+					'facebook' => 'bluecoral.vn',
 				),
 				'url' => array(
 					'enabled' => 0,
@@ -141,7 +145,7 @@ if (!class_exists('Chat_Bubble_Be')) {
 					'pos' => 0,
 					'place' => 'inner',
 					'title' => 'Blue Coral',
-					'url' => 'http://cyberbase.vn',
+					'url' => 'http://bluecoral.vn',
 				),
 			);
 		}		
@@ -219,7 +223,7 @@ if (!class_exists('Chat_Bubble_Be')) {
 					'description'        => '',
 					'public'             => false,
 					'exclude_from_search' => true,
-					'publicly_queryable' => true,
+					'publicly_queryable' => false,
 					'show_ui'            => true,
 					'show_in_menu'       => $this->domain,
 					'query_var'          => true,
@@ -457,7 +461,7 @@ if (!class_exists('Chat_Bubble_Be')) {
 			add_menu_page('Chat Bubble settings', 'Chat Bubble', 'manage_options', $this->domain, array($this, 'cbb_render_settings_page'), 'dashicons-format-chat');
 			add_submenu_page($this->domain, 'Chat Bubble settings', __('General Settings', 'chat-bubble'), 'manage_options', $this->domain, array($this, 'cbb_render_settings_page'), 5);
 			add_submenu_page($this->domain, 'Chat Bubble items', __('Bubble Items', 'chat-bubble'), 'manage_options', $this->domain.'-items', array($this, 'cbb_render_settings_page_item'), 10);
-			add_submenu_page($this->domain, 'Chat Bubble features', __('Features', 'chat-bubble'), 'manage_options', $this->domain.'-features', array($this, 'cbb_render_settings_page_features'), 15);
+			// add_submenu_page($this->domain, 'Chat Bubble features', __('Features', 'chat-bubble'), 'manage_options', $this->domain.'-features', array($this, 'cbb_render_settings_page_features'), 15);
 		}
 		
 		function cbb_settings_page_menu() {
@@ -466,7 +470,7 @@ if (!class_exists('Chat_Bubble_Be')) {
 				array(
 					$this->domain => __('General Settings', 'chat-bubble'),
 					$this->domain.'-items' => __('Bubble Items', 'chat-bubble'),
-					$this->domain.'-features' => __('Features', 'chat-bubble'),
+					// $this->domain.'-features' => __('Features', 'chat-bubble'),
 				)
 			);
 		}			
@@ -483,11 +487,11 @@ if (!class_exists('Chat_Bubble_Be')) {
 			$this->cbb_render_settings_page_footer();
 		}
 		
-		function cbb_render_settings_page_features() {
-			$this->cbb_render_settings_page_header();			
-			$this->cbb_render_view('features');		
-			$this->cbb_render_settings_page_footer();			
-		}
+		// function cbb_render_settings_page_features() {
+		// 	$this->cbb_render_settings_page_header();			
+		// 	$this->cbb_render_view('features');		
+		// 	$this->cbb_render_settings_page_footer();			
+		// }
 		
 		function cbb_render_view($file_name = '', $once = true) {
 			$file = trailingslashit(plugin_dir_path( __FILE__ )).'views/'.$file_name.'.php';
@@ -628,9 +632,9 @@ if (!class_exists('Chat_Bubble_Be')) {
 		function cbb_sanitize_array($args = array()) {
 			foreach ($args as $key => $value) {
 				if (is_array($value)) {
-					$value = $this->cbb_sanitize_array($value);
+					$args[$key] = $this->cbb_sanitize_array($value);
 				} else {
-					$value = sanitize_text_field($value);
+					$args[$key] = sanitize_text_field($value);
 				}
 			}
 
