@@ -1,6 +1,6 @@
 === Chat Bubble - Contact Icons, Messages, Telegram, Email, SMS, Call me back ======
 
-Contributors: bluecoral
+Contributors: cyberbase, bluecoral, diancom1202, nguyenrom, lonelysoul9x
 Tags: Zalo, whatsapp, whatsapp chat, facebook messenger, click to chat, chat, chat button, call now button, messenger, whatsapp button, chat icon, contact button, click to call, telegram, integrate with crm, call me back, floating Chat, Tawk
 Requires at least: 5.6
 Tested up to: 5.8.1
@@ -8,7 +8,7 @@ Stable tag: 2.2
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Plugin URI: http://bluecoral.vn/products/chat-bubble
+Plugin URI: https://cyberbase.vn/plugins/chat-bubble
 
 Easy to get leads with beautiful floating contact form & get followers and chat messages via Zalo, Facebook Messenger, WhatsApp, Telegram, Line, Skype …
 

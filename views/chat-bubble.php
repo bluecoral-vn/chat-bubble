@@ -10,7 +10,24 @@ if (!defined('ABSPATH')) exit;
 global $cbb_options; ?>
 
 <?php do_action('cbb_before'); ?>
-	
+
+    <?php 
+        $bubble_items = array( 'messenger', 'url', 'phone', 'email', 'telegram', 'line', 'skype', 
+        'viber', 'whatsapp', 'zalo', 'tawkto', 'callback_simple', 'callback_advanced' );
+
+        $any_items_in_inner = false;
+        foreach( $bubble_items as $key ) {
+            if ( $cbb_options[$key]["enabled"] == "1" && $cbb_options[$key]["place"] == "inner") {
+                $any_items_in_inner = true;
+                break;
+            }
+        }
+
+        if (!$any_items_in_inner) {
+            $custom_css = "._bc_cbb_btn._bc_cbb_btn--chat { visibility: hidden !important; }";
+            wp_add_inline_style( 'cbb-main', $custom_css );
+        }
+    ?>
 	<!-- Chat Bubble -->
 	<noscript>You need to enable JavaScript to run this app.</noscript>
 	<div id="chat-bubble-root"></div>

@@ -146,7 +146,7 @@ extract($cbb_options); ?>
 													<div class="input-group-prepend">
 														<label class="input-group-text" for="greeting_avatar"><?php _e('Avatar', 'chat-bubble'); ?></label>
 													</div>
-													<input id="greeting_avatar" name="greeting_avatar" type="text" class="form-control" value="<?php echo esc_attr($greeting_avatar); ?>" />
+													<input id="greeting_avatar" name="greeting_avatar" type="text" class="form-control" value="<?php echo !empty($greeting_avatar) ? esc_attr($greeting_avatar) : plugin_dir_url(CHAT_BUBBLE_PLUGIN_FILE) . 'assets/images/avatar_default.png'; ?>" />
 													<div class="input-group-append">
 														<button id="greeting-avatar" type="button" class="btn btn-outline-secondary"><?php _e('Choose', 'chat-bubble'); ?></button>
 													</div>
