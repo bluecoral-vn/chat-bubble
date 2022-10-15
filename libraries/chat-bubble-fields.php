@@ -47,6 +47,18 @@ if (!class_exists('CBB_Fields')) {
 							'title' => __('Phone contact', 'chat-bubble'),
 							'placeholder' => __('Enter your phone contact.', 'chat-bubble'),
 						),
+						array(
+							'type' => 'upload',
+							'name' => 'icon',
+							'title' => __('Icon', 'chat-bubble'),
+							'placeholder' => __('Change Icon.', 'chat-bubble'),
+							'description' => 'Icon require 48x48 pixel',
+						),
+						array(
+							'type' => 'checkbox',
+							'name' => 'use_default_icon',
+							'title' => __('Use default icon.', 'chat-bubble'),
+						),
 					),
 				),
 				'url' => array(
@@ -71,6 +83,19 @@ if (!class_exists('CBB_Fields')) {
 							'name' => 'url',
 							'title' => __('Custom Link', 'chat-bubble'),
 							'placeholder' => __('Enter your custom link.', 'chat-bubble'),
+						),
+						array(
+							'type' => 'upload',
+							'name' => 'icon',
+							'title' => __('Icon', 'chat-bubble'),
+							'placeholder' => __('Change Icon.', 'chat-bubble'),
+							'description' => 'Icon require 48x48 pixel',
+						),
+						array(
+							'type' => 'checkbox',
+							'name' => 'use_default_icon',
+							'title' => __('Use default icon.', 'chat-bubble'),
+							'default_value' => 'true'
 						),
 						array(
 							'type' => 'checkbox',
@@ -102,6 +127,18 @@ if (!class_exists('CBB_Fields')) {
 							'title' => __('Contact email', 'chat-bubble'),
 							'placeholder' => __('Enter your contact email.', 'chat-bubble'),
 						),
+						array(
+							'type' => 'upload',
+							'name' => 'icon',
+							'title' => __('Icon', 'chat-bubble'),
+							'placeholder' => __('Change Icon.', 'chat-bubble'),
+							'description' => 'Icon require 48x48 pixel',
+						),
+						array(
+							'type' => 'checkbox',
+							'name' => 'use_default_icon',
+							'title' => __('Use default icon.', 'chat-bubble'),
+						),
 					),
 				),
 				'messenger' => array(
@@ -126,6 +163,18 @@ if (!class_exists('CBB_Fields')) {
 							'name' => 'facebook',
 							'title' => __('Facebook ID', 'chat-bubble'),
 							'placeholder' => __('Enter your facebook id.', 'chat-bubble'),
+						),
+						array(
+							'type' => 'upload',
+							'name' => 'icon',
+							'title' => __('Icon', 'chat-bubble'),
+							'placeholder' => __('Change Icon.', 'chat-bubble'),
+							'description' => 'Icon require 48x48 pixel',
+						),
+						array(
+							'type' => 'checkbox',
+							'name' => 'use_default_icon',
+							'title' => __('Use default icon.', 'chat-bubble'),
 						),
 						array(
 							'type' => 'checkbox',
@@ -158,6 +207,18 @@ if (!class_exists('CBB_Fields')) {
 							'placeholder' => __('Enter your telegram id.', 'chat-bubble'),
 						),
 						array(
+							'type' => 'upload',
+							'name' => 'icon',
+							'title' => __('Icon', 'chat-bubble'),
+							'placeholder' => __('Change Icon.', 'chat-bubble'),
+							'description' => 'Icon require 48x48 pixel',
+						),
+						array(
+							'type' => 'checkbox',
+							'name' => 'use_default_icon',
+							'title' => __('Use default icon.', 'chat-bubble'),
+						),
+						array(
 							'type' => 'checkbox',
 							'name' => 'blank',
 							'title' => __('Open new tab.', 'chat-bubble'),
@@ -186,6 +247,18 @@ if (!class_exists('CBB_Fields')) {
 							'name' => 'line',
 							'title' => __('LINE ID', 'chat-bubble'),
 							'placeholder' => __('Enter your LINE id.', 'chat-bubble'),
+						),
+						array(
+							'type' => 'upload',
+							'name' => 'icon',
+							'title' => __('Icon', 'chat-bubble'),
+							'placeholder' => __('Change Icon.', 'chat-bubble'),
+							'description' => 'Icon require 48x48 pixel',
+						),
+						array(
+							'type' => 'checkbox',
+							'name' => 'use_default_icon',
+							'title' => __('Use default icon.', 'chat-bubble'),
 						),
 						array(
 							'type' => 'checkbox',
@@ -218,6 +291,18 @@ if (!class_exists('CBB_Fields')) {
 							'placeholder' => __('Enter your Skype id.', 'chat-bubble'),
 						),
 						array(
+							'type' => 'upload',
+							'name' => 'icon',
+							'title' => __('Icon', 'chat-bubble'),
+							'placeholder' => __('Change Icon.', 'chat-bubble'),
+							'description' => 'Icon require 48x48 pixel',
+						),
+						array(
+							'type' => 'checkbox',
+							'name' => 'use_default_icon',
+							'title' => __('Use default icon.', 'chat-bubble'),
+						),
+						array(
 							'type' => 'checkbox',
 							'name' => 'blank',
 							'title' => __('Open new tab.', 'chat-bubble'),
@@ -246,6 +331,18 @@ if (!class_exists('CBB_Fields')) {
 							'name' => 'viber',
 							'title' => __('Viber ID', 'chat-bubble'),
 							'placeholder' => __('Enter your Viber id.', 'chat-bubble'),
+						),
+						array(
+							'type' => 'upload',
+							'name' => 'icon',
+							'title' => __('Icon', 'chat-bubble'),
+							'placeholder' => __('Change Icon.', 'chat-bubble'),
+							'description' => 'Icon require 48x48 pixel',
+						),
+						array(
+							'type' => 'checkbox',
+							'name' => 'use_default_icon',
+							'title' => __('Use default icon.', 'chat-bubble'),
 						),
 						array(
 							'type' => 'checkbox',
@@ -278,6 +375,18 @@ if (!class_exists('CBB_Fields')) {
 							'placeholder' => __('Enter your WhatsApp phone number.', 'chat-bubble'),
 						),
 						array(
+							'type' => 'upload',
+							'name' => 'icon',
+							'title' => __('Icon', 'chat-bubble'),
+							'placeholder' => __('Change Icon.', 'chat-bubble'),
+							'description' => 'Icon require 48x48 pixel',
+						),
+						array(
+							'type' => 'checkbox',
+							'name' => 'use_default_icon',
+							'title' => __('Use default icon.', 'chat-bubble'),
+						),
+						array(
 							'type' => 'checkbox',
 							'name' => 'blank',
 							'title' => __('Open new tab.', 'chat-bubble'),
@@ -308,6 +417,18 @@ if (!class_exists('CBB_Fields')) {
 							'placeholder' => __('Enter your Zalo phone number.', 'chat-bubble'),
 						),
 						array(
+							'type' => 'upload',
+							'name' => 'icon',
+							'title' => __('Icon', 'chat-bubble'),
+							'placeholder' => __('Change Icon.', 'chat-bubble'),
+							'description' => 'Icon require 48x48 pixel',
+						),
+						array(
+							'type' => 'checkbox',
+							'name' => 'use_default_icon',
+							'title' => __('Use default icon.', 'chat-bubble'),
+						),
+						array(
 							'type' => 'checkbox',
 							'name' => 'blank',
 							'title' => __('Open new tab.', 'chat-bubble'),
@@ -330,6 +451,18 @@ if (!class_exists('CBB_Fields')) {
 							'title' => __('Title label', 'chat-bubble'),
 							'placeholder' => __('Enter Title label of this bubble.', 'chat-bubble'),
 							'default_value' => 'Tawk.to',
+						),
+						array(
+							'type' => 'upload',
+							'name' => 'icon',
+							'title' => __('Icon', 'chat-bubble'),
+							'placeholder' => __('Change Icon.', 'chat-bubble'),
+							'description' => 'Icon require 48x48 pixel',
+						),
+						array(
+							'type' => 'checkbox',
+							'name' => 'use_default_icon',
+							'title' => __('Use default icon.', 'chat-bubble'),
 						),
 						array(
 							'type' => 'text',
@@ -355,6 +488,18 @@ if (!class_exists('CBB_Fields')) {
 							'title' => __('Title label', 'chat-bubble'),
 							'placeholder' => __('Enter Title label of this bubble.', 'chat-bubble'),
 							'default_value' => __('Call me now', 'chat-bubble'),
+						),
+						array(
+							'type' => 'upload',
+							'name' => 'icon',
+							'title' => __('Icon', 'chat-bubble'),
+							'placeholder' => __('Change Icon.', 'chat-bubble'),
+							'description' => 'Icon require 48x48 pixel',
+						),
+						array(
+							'type' => 'checkbox',
+							'name' => 'use_default_icon',
+							'title' => __('Use default icon.', 'chat-bubble'),
 						),
 						array(
 							'type' => 'text',
@@ -458,6 +603,18 @@ if (!class_exists('CBB_Fields')) {
 							'title' => __('Title label', 'chat-bubble'),
 							'placeholder' => __('Enter Title label of this bubble.', 'chat-bubble'),
 							'default_value' => __('Call me now', 'chat-bubble'),
+						),
+						array(
+							'type' => 'upload',
+							'name' => 'icon',
+							'title' => __('Icon', 'chat-bubble'),
+							'placeholder' => __('Change Icon.', 'chat-bubble'),
+							'description' => 'Icon require 48x48 pixel',
+						),
+						array(
+							'type' => 'checkbox',
+							'name' => 'use_default_icon',
+							'title' => __('Use default icon.', 'chat-bubble'),
 						),
 						array(
 							'type' => 'desc',

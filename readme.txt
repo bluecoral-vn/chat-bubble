@@ -1,10 +1,10 @@
-=== Chat Bubble - Contact Icons, Messages, Telegram, Email, SMS, Call me back ======
+=== Chat Bubble - Floating Chat with Contact Chat Icons, Messages, Telegram, Email, SMS, Call me back ======
 
-Contributors: cyberbase, bluecoral, diancom1202, nguyenrom, lonelysoul9x
-Tags: Zalo, whatsapp, whatsapp chat, facebook messenger, click to chat, chat, chat button, call now button, messenger, whatsapp button, chat icon, contact button, click to call, telegram, integrate with crm, call me back, floating Chat, Tawk
+Contributors: bluecoral
+Tags: Floating Chat, Chat Widget, Zalo, whatsapp, whatsapp chat, facebook messenger, click to chat, chat, chat button, call now button, messenger, whatsapp button, chat icon, contact button, click to call, telegram, integrate with crm, call me back, floating Chat, Tawk, chaty
 Requires at least: 5.6
 Tested up to: 5.8.1
-Stable tag: 2.2
+Stable tag: 2.3
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -16,7 +16,7 @@ Easy to get leads with beautiful floating contact form & get followers and chat 
 
 <strong>Add an eye-catching chat/floating bubble that follows your customers anywhere throughout their visits to your website.</strong>
 
-(Tiếng Việt: <a href="https://vi.wordpress.org/plugins/chat-bubble/">https://vi.wordpress.org/plugins/chat-bubble/</a>)
+🔥 Join us in developing this source code so that <a href="https://github.com/bluecoral-vn/chat-bubble" rel="friend" title="Chat Bubble">Chat Bubble</a> can benefit everyone all together.
 
 = The bubble serves many purposes, depends on what you want it to be: =
 * Display your information: business hours, website URL, Google map, etc.
@@ -34,7 +34,8 @@ Easy to get leads with beautiful floating contact form & get followers and chat 
 If you like this plugin, then consider checking out our other projects:
 
 * <a href="https://wordpress.org/plugins/advanced-flamingo/" rel="friend" title="Advanced Flamingo">Advanced Flamingo</a> - This simple but powerful plugin will help your improve using Flamingo and Contact Form 7
-* <a href="https://wordpress.org/plugins/login-by-zalo/" rel="friend" title="Login by Zalo">Login by Zalo</a> - Integrate Zalo Login at your website easiest and simplest possible way.
+* <a href="https://wordpress.org/plugins/shipping-checkout-localized-for-vietnam/" rel="friend" title="Shipping & checkout – Localized for Vietnam">Shipping & checkout – Localized for Vietnam</a> - Extended features for WooCommerce to match the market and the legality in Vietnam.
+</a> - Quick payment using Momo, Zalo Pay, AirPay, Viettel Pay, Moca,… for individual customers, developed for WooCommerce.
 * <a href="https://wordpress.org/plugins/qrcode-payment-for-vietnam/" rel="friend" title="Chat Bubble">QRCode Payment for Vietnam
 </a> - Quick payment using Momo, Zalo Pay, AirPay, Viettel Pay, Moca,… for individual customers, developed for WooCommerce.
 
@@ -56,6 +57,13 @@ area
 2. Configuration.
 
 == Changelog ==
+
+= 2.3 =
+* Hide main icon if inter items is empty
+* Insert default avatar
+* Hide empty tab
+* Fix sanitize not working
+* Improve performance and fix minor issues
 
 = 2.2 =
 * Update Viber deeplink

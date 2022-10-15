@@ -7,7 +7,7 @@
 * Author: Blue Coral
 * Author URI: http://bluecoral.vn
 * Contributors: bluecoral
-* Version: 2.2
+* Version: 2.3
 * Text Domain: chat-bubble
 *
 */
@@ -106,12 +106,12 @@ if (!class_exists('Chat_Bubble_Be')) {
 				'greeting' => 'Welcome! 👋🏼👋🏼👋🏼 What can I help you with today?',
 				'links' => array(
 					array(
-						'u' => 'http://cyberbase.vn/',
+						'u' => 'http://bluecoral.vn/',
 						't' => 'Homepage',
 						'b' => 1,
 					),
 					array(
-						'u' => 'https://www.facebook.com/cyberbase.vn',
+						'u' => 'https://www.facebook.com/bluecoral.vn',
 						't' => 'Facebook',
 						'b' => 1,
 					),
@@ -137,7 +137,7 @@ if (!class_exists('Chat_Bubble_Be')) {
 					'pos' => 0,
 					'place' => 'inner',
 					'title' => 'Messenger',
-					'facebook' => 'cyberbase.vn',
+					'facebook' => 'bluecoral.vn',
 				),
 				'url' => array(
 					'enabled' => 0,
@@ -145,7 +145,7 @@ if (!class_exists('Chat_Bubble_Be')) {
 					'pos' => 0,
 					'place' => 'inner',
 					'title' => 'Blue Coral',
-					'url' => 'http://cyberbase.vn',
+					'url' => 'http://bluecoral.vn',
 				),
 			);
 		}		
@@ -421,12 +421,21 @@ if (!class_exists('Chat_Bubble_Be')) {
 			if (!function_exists('wp_create_nonce')) {
 				require_once ABSPATH . WPINC . '/pluggable.php';
 			}
-			
+			$bubble_items = array( 'messenger', 'url', 'phone', 'email', 'telegram', 'line', 'skype', 
+        							'viber', 'whatsapp', 'zalo', 'tawkto', 'callback_simple', 'callback_advanced' );
+
+			$filtered_options = $this->options;
+			foreach( $bubble_items as $key ) {
+				if ( $filtered_options[$key]["enabled"] == "1" && isset( $filtered_options[$key]["use_default_icon"] ) && $filtered_options[$key]["use_default_icon"] == "0" ) {
+					$filtered_options[$key . "_icon"] = $filtered_options[$key]["icon"];
+				}
+			}
+
 			$var = apply_filters(
 				'cbb_var', 
 				array(
 					'ajax_url' => apply_filters('cbb_var_ajax_url', admin_url('admin-ajax.php')),
-					'options' => $this->options,
+					'options' => $filtered_options,
 					'nonce' => array(
 						self::NONCE_CALLBACK => wp_create_nonce(self::NONCE_CALLBACK),
 					),
@@ -435,7 +444,7 @@ if (!class_exists('Chat_Bubble_Be')) {
 			ob_start(); ?>
 			
 				<script>
-					window.chatBubbleConfig = <?php echo json_encode($var); ?>				
+					window.chatBubbleConfig = <?php echo json_encode($var); ?>
 				</script>
 			
 			<?php $script = ob_get_clean();

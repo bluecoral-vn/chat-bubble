@@ -21,6 +21,25 @@ jQuery(document).ready(function($) {
 		
 		cbbMedia.open();
     });	
+
+	$("[data-button-upload]").on('click', function(e) {
+		e.preventDefault();
+		 
+		if (cbbMedia) return cbbMedia.open();
+		 
+		cbbMedia = wp.media.frames.file_frame = wp.media({
+			title: 'Select media',
+			button: {
+			text: 'Select media'
+		}, multiple: false });	 
+		
+		cbbMedia.on('select', function() {
+			var attachment = cbbMedia.state().get('selection').first().toJSON();
+			return $(e.target).closest("div.input-group").find("input").val(attachment.url);
+		});
+		
+		cbbMedia.open();
+    });	
 	
 	$('#button-link-items').on('click', function() {
 		if (!$('#link-items-temp').length) return;
