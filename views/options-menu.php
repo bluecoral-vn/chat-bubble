@@ -12,12 +12,14 @@ extract($cbb_options); ?>
 
 	<div class="col-md-12 ufa-nav">
 		<ul class="nav">
+			<li class="nav-item" style="margin-right: 1.5em; font-size: 22px; font-weight: 500">
+				Chat Bubble
+			</li>
 		<?php foreach ($this->cbb_settings_page_menu() as $k => $menu_item) { ?>
 			<li class="nav-item <?php echo (@$_GET['page'] == $k) ? 'active' : ''; ?>" style="margin-right: 1.5em;">
 				<a href="<?php echo admin_url('admin.php?page='.$k); ?>"><?php echo $menu_item; ?></a>
 			</li>
 		<?php } ?>
-		
 			<li class="nav-item nav-item-support">
 				<a href="mailto:support@bluecoral.vn" data-toggle="tooltip" data-placement="top" title="<?php _e('Need Support ?', 'chat-bubble'); ?>">
 					<i class="dashicons dashicons-sos"></i> 
