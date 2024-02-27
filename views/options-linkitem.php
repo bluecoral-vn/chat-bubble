@@ -8,7 +8,11 @@
 if (!defined('ABSPATH')) exit;
 
 $link_data = isset($this->link_data) ? (array) $this->link_data : array();  ?>
-
+<?php 
+	$link_url = isset( $link_data['u'] ) ? $link_data['u'] : "";
+	$link_title = isset( $link_data['t'] ) ? $link_data['t'] : "";
+	$link_checkbox = isset( $link_data['b'] ) ? $link_data['b'] : "0";
+?>
 	<li class="bubble-item">
 		<div class="card">
 			<div class="card-header">
@@ -20,7 +24,7 @@ $link_data = isset($this->link_data) ? (array) $this->link_data : array();  ?>
 						<div class="row">
 							<div class="col-md-3 col-header"><?php _e('URL', 'chat-bubble'); ?></div>
 							<div class="col-md-9 col-content col-border-bottom">
-								<input name="clink[]" type="text" placeholder="https://" class="regular-text form-control form-control-link-url" style="max-width: 25rem;" value="<?php echo esc_attr(stripcslashes(@$link_data['u'])); ?>" required />
+								<input name="clink[]" type="text" placeholder="https://" class="regular-text form-control form-control-link-url" style="max-width: 25rem;" value="<?php echo esc_attr(stripcslashes( $link_url )); ?>" required />
 							</div>
 						</div>
 					</div>
@@ -28,7 +32,7 @@ $link_data = isset($this->link_data) ? (array) $this->link_data : array();  ?>
 						<div class="row">
 							<div class="col-md-3 col-header"><?php _e('Link Text', 'chat-bubble'); ?></div>
 							<div class="col-md-9 col-content col-border-bottom">
-								<input name="ctext[]" type="text" placeholder="" class="regular-text form-control form-control-link-text" style="max-width: 25rem;" value="<?php echo esc_attr(stripcslashes(@$link_data['t'])); ?>" required />
+								<input name="ctext[]" type="text" placeholder="" class="regular-text form-control form-control-link-text" style="max-width: 25rem;" value="<?php echo esc_attr(stripcslashes( $link_title )); ?>" required />
 							</div>
 						</div>
 					</div>
@@ -37,8 +41,8 @@ $link_data = isset($this->link_data) ? (array) $this->link_data : array();  ?>
 							<div class="offset-md-3 col-md-9 col-content">
 								<p>
 									<label class="bubble-item-lbl">										
-										<input type="checkbox" value="1" class="form-control bubble-item-blank" <?php checked((int) @$link_data['b'], 1); ?> />
-										<input type="hidden" value="<?php echo (int) @$link_data['b']; ?>" name="cblank[]" />
+										<input type="checkbox" value="1" class="form-control bubble-item-blank" <?php checked((int) $link_checkbox, 1); ?> />
+										<input type="hidden" value="<?php echo (int) $link_checkbox; ?>" name="cblank[]" />
 									<?php _e('Open new tab.', 'chat-bubble'); ?>											
 									</label>
 								</p>										

@@ -83,8 +83,9 @@ if (!defined('ABSPATH')) exit; ?>
 									<?php case 'text': ?>								
 									<?php case 'url': ?>
 									<div class="col-md-3 col-header"><?php echo $field['title']; ?></div>
+									<?php $field_value = isset( $field['value'] ) ? $field['value'] : ''; ?>
 									<div class="col-md-9 col-content col-border-bottom">
-										<input name="<?php echo $key; ?>[<?php echo $field['name']; ?>]" type="<?php echo $field['type']; ?>" placeholder="<?php echo $field['placeholder']; ?>" class="regular-text form-control" style="max-width: 25rem;" value="<?php echo esc_attr(stripslashes(@$field['value'])); ?>" />
+										<input name="<?php echo $key; ?>[<?php echo $field['name']; ?>]" type="<?php echo $field['type']; ?>" placeholder="<?php echo $field['placeholder']; ?>" class="regular-text form-control" style="max-width: 25rem;" value="<?php echo esc_attr(stripslashes( $field_value ) ); ?>" />
 																		
 									<?php if (!empty($field['description'])) { ?>
 										<p class="description"><?php echo stripslashes(@$field['description']); ?></p>

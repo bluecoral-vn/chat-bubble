@@ -426,7 +426,7 @@ if (!class_exists('Chat_Bubble_Be')) {
 
 			$filtered_options = $this->options;
 			foreach( $bubble_items as $key ) {
-				if ( $filtered_options[$key]["enabled"] == "1" && isset( $filtered_options[$key]["use_default_icon"] ) && $filtered_options[$key]["use_default_icon"] == "0" ) {
+				if ( isset( $filtered_options[$key] ) && $filtered_options[$key]["enabled"] == "1" && isset( $filtered_options[$key]["use_default_icon"] ) && $filtered_options[$key]["use_default_icon"] == "0" ) {
 					$filtered_options[$key . "_icon"] = $filtered_options[$key]["icon"];
 				}
 			}
@@ -607,8 +607,8 @@ if (!class_exists('Chat_Bubble_Be')) {
 				if ($i >= $item_limit) break;
 				
 				$items[] = array(
-					'u' => $c,
-					't' => $ctext[$i],
+					'u' => esc_url( sanitize_text_field( $c ) ),
+					't' => esc_html( sanitize_text_field( $ctext[$i] ) ),
 					'b' => $cblank[$i],
 				);
 			}
